@@ -1,0 +1,401 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'Standard';
+  src: url('standard-book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tailsman';
+  src: url('PPTalisman-Condensed-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.product-section {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+/* Section 1 - Background Image and Branding */
+#hydrocolloid {
+  display: flex;
+  flex-direction: column;
+  background-image: url('forehead patches.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.top-bar, .bottom-bar {
+  height: 10vh;
+  background-color: #4F7AE3;
+  position: relative;
+}
+
+.logo {
+  width: 85vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  color: rgb(0, 0, 0);
+  font-family: 'Tailsman';
+
+}
+
+.background-image h1 {
+  font-size: 3rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+/* Section 2 - Automatic Scrolling Images */
+.auto-scroll {
+  background-color: #FF8DE6;
+  padding: 2vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scroll 5s linear infinite;
+}
+
+.scroll-image {
+  width: 80vw;
+  height: 80vw;
+  margin: 2vh 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+
+/* Centered vertical stack for patch illustrations */
+/* Info Section Styling */
+.info-section {
+  background-color: #4F7AE3;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Illustrations Container */
+.illustrations-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0; /* Behind the text */
+}
+
+/* Patch Illustration Styling */
+.patch-illustration {
+  width: 80vw;
+  margin: 1vh 0; /* Add space between illustrations */
+  opacity: 0; /* Start hidden */
+  position: relative;
+}
+
+/* Scroll Text Styling */
+.scroll-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  z-index: 1; /* Above illustrations */
+  text-align: center;
+  width: 90%;
+}
+
+  
+
+/* Section 4 - Rotating Concentric Circles */
+.rotate-image {
+  background-color: #FF8DE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.rotating-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.rotating-image {
+  position: absolute;
+  animation: rotate 10s linear infinite;
+  border-radius: 50%;
+}
+.rotating-image.smallest2 { width: 40vw; }
+.rotating-image.smallest1 { width: 70vw; }
+.rotating-image.smallest { width: 110vw; }
+.rotating-image.medium { width: 160vw; }
+.rotating-image.large { width: 225vw; }
+.rotating-image.largest { width: 310vw; }
+
+.rotating-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  font-size: 0.5rem;
+  text-align: left;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.product-section {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+/* Fifth Section - Text Alignment */
+.background-image-section {
+background-color: #5979DC;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dynamic-text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 'Tailsman';
+  color: rgb(255, 255, 255);
+}
+
+.dynamic-text span {
+  position: absolute; /* Allow precise placement */
+  font-weight: bold;
+  white-space: nowrap; /* Prevent line breaks for words */
+  text-align: left;
+  line-height: 4rem; /* Adjust line height if needed */
+}
+
+.sixth-section {
+  background-color: #B0E8C8;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.draggable-images-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.draggable-image {
+  position: absolute;
+  width: 50%; /* Adjust size as needed */
+  height: auto;
+  top: calc(10% + 80% * var(--random-y)); /* Randomize position */
+  left: calc(10% + 80% * var(--random-x));
+  cursor: grab;
+  touch-action: none; /* Prevent default touch gestures */
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2; /* Ensure it's above other elements */
+  background-color: #F093E1; /* Oval background color */
+  border-radius: 50%; /* Make the background an oval */
+  padding: 1rem 3rem; /* Adjust for the oval shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+}
+
+.center-text span {
+  display: block;
+  font-family: "bely-display", sans-serif;
+  font-weight: 400;
+  color: rgb(0, 0, 0); /* Text color inside the oval */
+  font-size: 2.5rem; /* Adjust size */
+  line-height: 2.5rem;
+  opacity: 0; /* Start hidden for animations */
+  animation: fadeIn 1s ease forwards; /* Optional animation */
+}
+
+.word-one {
+  animation-delay: 0.5s; /* Delay for "STICK" */
+}
+
+.word-two {
+  animation-delay: 1.5s; /* Delay for "SHEET!" */
+}
+
+/* Optional: Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.seventh-section {
+  background-color: #ffffff; /* Placeholder */
+  position: relative;
+  overflow: hidden;
+}
+
+.stickers-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Prevent interaction with stickers */
+}
+
+.sticker {
+  position: absolute;
+  width: 100px; /* Slightly larger stickers */
+  height: auto;
+  transform-origin: center; /* Rotate around the center */
+}
+
+
+.eighth-section {
+  background-color: #F093E1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.oval-container {
+  background-color: #5979DC;
+  width: 100%;
+  max-width: 500px; /* Limit the oval's size */
+  height: 100%; /* Adjust height for a vertical look */
+  border-radius: 50%; /* Makes it an oval */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+.info-container {
+  max-width: 90%;
+}
+
+.section-title {
+  font-family: 'Tailsman', sans-serif;
+  font-size: 4rem;
+  line-height: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.info-text {
+  font-family: 'Standard', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.final-section {
+  background-color: black; /* Dark background for contrast */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#video-container {
+  width: 640px; /* Adjust size of the video container */
+  height: 480px;
+  transform: scaleX(-1); /* Mirror the video feed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 20px; /* Optional rounded corners */
+  overflow: hidden;
+  background-color: #000; /* Ensure consistent background */
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+.product-section {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
