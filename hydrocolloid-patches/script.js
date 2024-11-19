@@ -357,4 +357,5 @@ function draw() {
     }
   }
 
-
+  console.log("ml5 version:", ml5.version); // Add to `script.js`
+  console.log("Custom script loaded!");
