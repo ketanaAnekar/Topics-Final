@@ -355,6 +355,6 @@ function draw() {
             image(chinPatchImage, chinRightX, chinY, 30, 30);
         }
     }
-}
+  }
 
 
