@@ -12,6 +12,37 @@ function createIllustration() {
   patch.style.transition = 'opacity 1s ease'; // Smooth fade-in
   return patch;
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollContainer = document.querySelector(".scroll-container");
+  const images = Array.from(document.querySelectorAll(".scroll-image"));
+
+  // Clone images to create a seamless loop
+  images.forEach((image) => {
+    const clone = image.cloneNode(true);
+    scrollContainer.appendChild(clone);
+  });
+
+  let scrollOffset = 0;
+
+  function scrollImages() {
+    // Move the container upwards
+    scrollOffset += 3.5;
+
+    // Reset the scroll offset if we've scrolled through one set of images
+    if (scrollOffset >= scrollContainer.scrollHeight / 2) {
+      scrollOffset = 0;
+    }
+
+    // Apply the scroll offset
+    scrollContainer.style.transform = `translateY(-${scrollOffset}px)`;
+
+    // Keep scrolling
+    requestAnimationFrame(scrollImages);
+  }
+
+  // Start the scrolling effect
+  scrollImages();
+});
 
 // Function to add illustrations in a vertical stack
 function addIllustrationsStacked() {
@@ -81,12 +112,13 @@ observer.observe(infoSection);
 scrollText.setAttribute('data-text', scrollText.textContent); // Store the full text
 const dynamicTextContainer = document.querySelector('.dynamic-text');
 const fifthSectionWords = [
-  { text: "BUT", top: 10, left: -2 },         // Always at the top
-  { text: "WHAT'S", top: 25, left: -2 },     // Below "But"
-  { text: "DIFFERENT", top: 40, left: -2 },  // Below "what's"
-  { text: "ABOUT", top: 55, left: -2 },      // Below "different"
-  { text: "S&P?", top: 70, left: -2 },        // At the bottom
+  { text: "BUT", top: 20, left: -2 },         // Always at the top
+  { text: "WHAT'S", top: 32, left: -2 },     // Adjusted to be closer to "BUT"
+  { text: "DIFFERENT", top: 44, left: -2 },  // Adjusted to be closer to "WHAT'S"
+  { text: "ABOUT", top: 56, left: -2 },      // Adjusted to be closer to "DIFFERENT"
+  { text: "S&P?", top: 68, left: -2 },       // Adjusted to be closer to "ABOUT"
 ];
+
 let currentWordIndex = 0;
 
 // Function to create and style individual word elements
@@ -222,6 +254,46 @@ const sixthSectionObserver = new IntersectionObserver((entries) => {
 
 sixthSectionObserver.observe(sixthSection);
 
+const typewriterContainer = document.querySelector('.typewriter-container');
+const typewriterTitle = document.querySelector('#typewriter-title');
+const typewriterBody = document.querySelector('#typewriter-body');
+
+const eighthSectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Start the typewriter effect when section is in view
+      if (!typewriterContainer.classList.contains('typed-out')) {
+        typewriterEffect(typewriterTitle, "STICK SHEET", () => {
+          typewriterEffect(
+            typewriterBody,
+            "Each Stick & Peel product comes with a Stick Sheet and one sticker. Add your sticker to the sheet to start earning rewards! Fill 5 spots for a free product under $10. Complete two full sheets for a $20 reward. Self-care that sticks with you!"
+          );
+        });
+        typewriterContainer.classList.add('typed-out'); // Avoid triggering again
+      }
+    }
+  });
+}, { threshold: 0.5 });
+
+// Typewriter effect function
+function typewriterEffect(element, text, callback = null, speed = 50) {
+  element.style.visibility = 'visible'; // Show the element
+  let index = 0;
+  element.textContent = ''; // Clear initial text
+
+  const interval = setInterval(() => {
+    if (index < text.length) {
+      element.textContent += text[index]; // Add one character at a time
+      index++;
+    } else {
+      clearInterval(interval); // Stop the interval when done
+      if (callback) callback(); // Call the next function, if provided
+    }
+  }, speed);
+}
+
+// Observe the 8th section
+eighthSectionObserver.observe(document.querySelector('.eighth-section'));
 
 const stickersContainer = document.querySelector('.stickers-container');
 const stickerImages = [

@@ -39,7 +39,7 @@ body {
 }
 
 .top-bar, .bottom-bar {
-  height: 10vh;
+  height: 14vh;
   background-color: #4F7AE3;
   position: relative;
 }
@@ -72,30 +72,25 @@ body {
 /* Section 2 - Automatic Scrolling Images */
 .auto-scroll {
   background-color: #FF8DE6;
-  padding: 2vh;
+  height: 100vh;
   overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start; /* Align the scrolling container to the top */
 }
 
 .scroll-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: scroll 5s linear infinite;
+  flex-direction: column; /* Stack images vertically */
+  position: relative;
 }
 
 .scroll-image {
   width: 80vw;
-  height: 80vw;
-  margin: 2vh 0;
+  height: auto;
+  margin: 10px 0; /* Add some spacing between images */
 }
 
-@keyframes scroll {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-100%); }
-}
 
 
 /* Centered vertical stack for patch illustrations */
@@ -128,7 +123,7 @@ body {
 .patch-illustration {
   width: 80vw;
   margin: 1vh 0; /* Add space between illustrations */
-  opacity: 0; /* Start hidden */
+  opacity: 0.5; /* Start hidden */
   position: relative;
 }
 
@@ -141,7 +136,7 @@ body {
   font-size: 1rem;
   color: rgb(0, 0, 0);
   z-index: 1; /* Above illustrations */
-  text-align: center;
+  text-align: left;
   width: 90%;
 }
 
@@ -223,11 +218,11 @@ background-color: #5979DC;
   font-weight: bold;
   white-space: nowrap; /* Prevent line breaks for words */
   text-align: left;
-  line-height: 4rem; /* Adjust line height if needed */
+  line-height: -2rem; /* Adjust line height if needed */
 }
 
 .sixth-section {
-  background-color: #B0E8C8;
+  background-color: #000000;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -259,20 +254,21 @@ background-color: #5979DC;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2; /* Ensure it's above other elements */
-  background-color: #F093E1; /* Oval background color */
+  background-color: #5979DC; /* Oval background color */
   border-radius: 50%; /* Make the background an oval */
   padding: 1rem 3rem; /* Adjust for the oval shape */
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+  gap: 0.5rem;
+ 
 }
 
 .center-text span {
   display: block;
-  font-family: "bely-display", sans-serif;
+  font-family: 'tailsman';
   font-weight: 400;
-  color: rgb(0, 0, 0); /* Text color inside the oval */
+  color: rgb(255, 255, 255); /* Text color inside the oval */
   font-size: 2.5rem; /* Adjust size */
   line-height: 2.5rem;
   opacity: 0; /* Start hidden for animations */
@@ -321,49 +317,53 @@ background-color: #5979DC;
 
 
 .eighth-section {
-  background-color: #F093E1;
-  position: sticky;
-  top: 0;
+  background-color: #B0E8C8;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 10px;
-}
-
-
-.oval-container {
-  background-color: #5979DC;
-  width: 100%;
-  max-width: 500px; /* Limit the oval's size */
-  height: 100%; /* Adjust height for a vertical look */
-  border-radius: 50%; /* Makes it an oval */
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds depth */
-}
-.info-container {
-  max-width: 90%;
+  text-align: left;
+  position: relative;
 }
 
-.section-title {
+.typewriter-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust the width as needed */
+  height: 70%; /* Adjust the height as needed */
+  background-color: #4F7AE3; /* Box color */
+  border-radius: 10px; /* Optional: rounded corners */
+  z-index: 1; /* Place behind the text */
+  opacity: 0.9; /* Optional transparency */
+}
+
+.typewriter-container {
+  position: relative;
+  z-index: 2; /* Place above the rectangular box */
+  text-align: left;
+  max-width: 70%;
+}
+
+.typewriter-title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
   font-family: 'Tailsman', sans-serif;
-  font-size: 4rem;
-  line-height: 3.5rem;
-  color: #ffffff;
-  margin-bottom: 15px;
+  color: #fff; /* Text color for better readability */
 }
 
-.info-text {
-  font-family: 'Standard', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #ffffff;
+.typewriter-body {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  font-family: 'Standard';
+  color: #fff;
+  position: relative;
+  top: -4vh;
 }
+
+
 
 .final-section {
   background-color: black; /* Dark background for contrast */
