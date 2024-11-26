@@ -6,12 +6,21 @@ let isTyping = false; // To prevent multiple typewriter triggers
 // Function to create and style a centered illustration
 function createIllustration() {
   const patch = document.createElement('img');
-  patch.src = 'Asset3.png'; // Set your illustration source here
+  patch.src = 'Asset 16.png'; // Set your illustration source here
   patch.className = 'patch-illustration';
   patch.style.opacity = '0'; // Start hidden
   patch.style.transition = 'opacity 1s ease'; // Smooth fade-in
   return patch;
 }
+
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const scrollContainer = document.querySelector(".scroll-container");
   const images = Array.from(document.querySelectorAll(".scroll-image"));
@@ -46,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Function to add illustrations in a vertical stack
 function addIllustrationsStacked() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 1; i++) {
     const illustration = createIllustration();
     illustrationsContainer.appendChild(illustration);
 
