@@ -123,7 +123,7 @@ body {
 
 /* Patch Illustration Styling */
 .patch-illustration {
-  width: 250vw;
+  width: 210vw;
   transform: rotate(-10deg);
   margin: 1vh 0; /* Add space between illustrations */
   opacity: 0.5; /* Start hidden */
@@ -136,7 +136,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
+  font-size: 2rem;
   color: rgb(255, 255, 255);
   z-index: 1; /* Above illustrations */
   text-align: left;
