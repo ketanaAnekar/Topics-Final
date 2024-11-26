@@ -169,11 +169,11 @@ body {
   animation: rotate 10s linear infinite;
   border-radius: 50%;
 }
-.rotating-image.smallest2 { width: 40vw; }
-.rotating-image.smallest1 { width: 70vw; }
-.rotating-image.smallest { width: 110vw; }
-.rotating-image.medium { width: 160vw; }
-.rotating-image.large { width: 210vw; }
+.rotating-image.smallest3 { width: 35vw; }
+.rotating-image.smallest2 { width: 60vw; }
+.rotating-image.smallest1 { width: 95vw; }
+.rotating-image.smallest { width: 140vw; }
+.rotating-image.medium { width: 200vw; }
 
 .rotating-text {
   position: absolute;
