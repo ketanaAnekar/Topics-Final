@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  @font-face {
+    font-family: 'Standard';
+    src: url('standard-book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Tailsman';
+    src: url('PPTalisman-Condensed-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .product-section {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Section 1 - Background Image and Branding */
+  #hydrocolloid {
+    display: flex;
+    flex-direction: column;
+    background-image: url('stick4.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .top-bar, .bottom-bar {
+    height: 14vh;
+    
+    position: relative;
+  }
+  
+  .logo {
+    width: 100vw;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .background-image {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    flex-grow: 1;
+    color: rgb(255, 255, 255);
+    font-family: 'Tailsman';
+    translate: rotate();
+  
+  }
+  
+  .background-image h1 {
+    position: relative;
+    top: 26vh;
+    left: 2vw;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: left;
+  }
+  
+  /* Section 2 - Automatic Scrolling Images */
+  .auto-scroll {
+    background-color: #4F7AE3;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align the scrolling container to the top */
+  }
+  
+  .scroll-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    position: relative;
+  }
+  
+  .scroll-image {
+    width: 80vw;
+    height: auto;
+    margin: 10px 0; /* Add some spacing between images */
+  }
+  
+  
+  
+  /* Centered vertical stack for patch illustrations */
+  /* Info Section Styling */
+  .info-section {
+    background-color: #ffffff;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Illustrations Container */
+  .illustrations-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 0; /* Behind the text */
+  }
+  
+  /* Patch Illustration Styling */
+  .patch-illustration {
+    width: 265vw;
+    transform: rotate(-10deg);
+    margin: 1vh 0; /* Add space between illustrations */
+    opacity: 0.5; /* Start hidden */
+    position: relative;
+  }
+  
+  /* Scroll Text Styling */
+  .scroll-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    z-index: 1; /* Above illustrations */
+    text-align: left;
+    width: 90%;
+  }
+  
+    
+  
+  /* Section 4 - Rotating Concentric Circles */
+  .rotate-image {
+    background-color: #B0E8C8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .rotating-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .rotating-image {
+    position: absolute;
+    animation: rotate 10s linear infinite;
+    border-radius: 50%;
+  }
+  .rotating-image.smallest3 { width: 35vw; }
+  .rotating-image.smallest2 { width: 60vw; }
+  .rotating-image.smallest1 { width: 95vw; }
+  .rotating-image.smallest { width: 140vw; }
+  .rotating-image.medium { width: 200vw; }
+  
+  .rotating-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 0.5rem;
+    text-align: left;
+    z-index: 1;
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .product-section {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  
+  /* Fifth Section - Text Alignment */
+  .background-image-section {
+  background-color: #F093E1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .dynamic-text {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: 'Tailsman';
+    color: rgb(255, 255, 255);
+  }
+  
+  .dynamic-text span {
+    position: absolute; /* Allow precise placement */
+    font-weight: bold;
+    white-space: nowrap; /* Prevent line breaks for words */
+    text-align: left;
+    line-height: -2rem; /* Adjust line height if needed */
+  }
+  
+  .sixth-section {
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack curved text and center text vertically */
+  }
+  
+  /* Curved Text Styling */
+  .curved-text {
+    position: absolute;
+    top: 38%; /* Position above the oval */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 3; /* Ensure it's above all images */
+  }
+  
+  .curve-svg {
+    width: 90%; /* Adjust to match oval size */
+    height: auto;
+  }
+  
+  .curve-svg text {
+    fill: #ffffff; /* White text color */
+    font-size: 1.5rem;
+    font-family: 'standard'; /* Use Tailsman font */
+    font-weight: 400;
+  }
+  
+  /* Draggable Images Styling */
+  .draggable-images-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2; /* Ensure images are below the curved text */
+  }
+  
+  .draggable-image {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    top: calc(10% + 80% * var(--random-y)); /* Random placement */
+    left: calc(10% + 80% * var(--random-x));
+    cursor: grab;
+    touch-action: none; /* Prevent default touch gestures */
+  }
+  
+  /* Oval and Text Styling */
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Ensure it's above images but below curved text */
+    background-color: #5979DC;
+    border-radius: 50%;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .center-text span {
+    display: block;
+    font-family: 'Tailsman';
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    opacity: 0; /* Start hidden for animations */
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .word-one {
+    animation-delay: 0.5s; /* Delay for "STICK" */
+  }
+  
+  .word-two {
+    animation-delay: 1.5s; /* Delay for "SHEET!" */
+  }
+  
+  /* Optional Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  .seventh-section {
+    background-color: #ffffff; /* Placeholder */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .stickers-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Prevent interaction with stickers */
+  }
+  
+  .sticker {
+    position: absolute;
+    width: 100px; /* Slightly larger stickers */
+    height: auto;
+    transform-origin: center; /* Rotate around the center */
+  }
+  
+  
+  .eighth-section {
+    background-color: #B0E8C8; /* Optional: Use this if you want a fallback background */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .png-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place behind the text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .background-png {
+    width: auto;
+    height: 100%; /* Adjust the height to cover the section */
+    object-fit: cover; /* Maintain aspect ratio */
+    opacity: 0.9; /* Optional: Adjust transparency */
+  }
+  
+  .typewriter-container {
+    position: relative;
+    z-index: 2; 
+    text-align: left;
+    max-width: 70%;
+  }
+  
+  .typewriter-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Tailsman', sans-serif;
+    color: #fff; /* Text color for better readability */
+  }
+  
+  .typewriter-body {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    font-family: 'Standard';
+    color: #fff;
+    position: relative;
+    top: -4vh;
+  }
+  
+  
+  
+  .final-section {
+    background-color: black; /* Dark background for contrast */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #video-container {
+    width: 640px; /* Adjust size of the video container */
+    height: 480px;
+    transform: scaleX(-1); /* Mirror the video feed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px; /* Optional rounded corners */
+    overflow: hidden;
+    background-color: #000; /* Ensure consistent background */
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  
+  .product-section {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  
