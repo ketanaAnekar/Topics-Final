@@ -34,7 +34,7 @@
   #hydrocolloid {
     display: flex;
     flex-direction: column;
-    background-image: url('stick6.png');
+    background-image: url('stick3.png');
     background-size: cover;
     background-position: center;
   }
@@ -76,7 +76,7 @@
   
   /* Section 2 - Automatic Scrolling Images */
   .auto-scroll {
-    background-color: #F093E1;
+    background-color: #4F7AE3;
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -101,7 +101,7 @@
   /* Centered vertical stack for patch illustrations */
   /* Info Section Styling */
   .info-section {
-    background-color: #5979DC;
+    background-color: #F093E1;
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -139,7 +139,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: rgb(255, 255, 255);
     z-index: 1; /* Above illustrations */
     text-align: left;
@@ -150,7 +150,7 @@
   
   /* Section 4 - Rotating Concentric Circles */
   .rotate-image {
-    background-color: #B0E8C8;
+    background-color: #4F7AE3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +201,7 @@
   
   /* Fifth Section - Text Alignment */
   .background-image-section {
-  background-color: #5979DC;
+  background-color: #B0E8C8;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -348,7 +348,7 @@
   
   
   .eighth-section {
-    background-color: #F093E1; /* Optional: Use this if you want a fallback background */
+    background-color: #4F7AE3; /* Optional: Use this if you want a fallback background */
     height: 100vh;
     display: flex;
     align-items: center;
